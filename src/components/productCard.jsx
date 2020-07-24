@@ -14,7 +14,7 @@ class ProductCard extends React.Component {
         <h2>{title}</h2>
         <p>{price}</p>
         <div>
-          <p>'botão c link e nome que cc não deixa escrever</p>
+          <p>botão c linque e nome que cc não deixa escrever</p>
         </div>
       </div>
     );
