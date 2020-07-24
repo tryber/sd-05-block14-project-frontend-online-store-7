@@ -14,7 +14,7 @@ class ProductCard extends React.Component {
         <h2>{title}</h2>
         <p>{price}</p>
         <div>
-          <p> Link to={`/product/${id}`}>VER DETALHES /Link </p>
+          <p> Link to="`/product/:${id}`">VER DETALHES /Link </p>
         </div>
       </div>
     );
