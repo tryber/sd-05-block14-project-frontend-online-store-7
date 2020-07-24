@@ -8,9 +8,7 @@ import * as API from '../services/api';
 class ProductList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      products: '',
-    };
+    this.state = { products: '' };
   }
 
   componentDidMount() {
