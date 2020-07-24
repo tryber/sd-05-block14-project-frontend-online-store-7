@@ -5,6 +5,8 @@ import ProductCard from '../components/productCard';
 import * as API from '../services/api';
 // import Loading from '../components/Loading';
 
+// AVISO: como não tem teste não sei se estamos puxando as props/states corretamente
+
 class ProductList extends Component {
   constructor(props) {
     super(props);
@@ -12,12 +14,12 @@ class ProductList extends Component {
   }
 
   componentDidMount() {
-    API.productsFromCategoryAndQuery().then((response) => this.setState({ products: response }));
+    API.productsFromCategoryAndQuery().then((response) => this.setState({ products: response })); // não sei se coloca ".results" aqui já
   }
 
   render() {
     const { products } = this.state;
-    const Results = products.results;
+    const Results = products.results; // ou faz isso
     return (
       <div data-testid="">
         {Results.map((product) => <ProductCard key={product.id} product={product} />)}

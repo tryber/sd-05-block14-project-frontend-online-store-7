@@ -4,6 +4,8 @@ import React from 'react';
 // import { getMovies } from '../services/movieAPI';
 // import PropTypes from 'prop-types';
 
+// AVISO: ainda falta o botão e não sei se estamos puxando as props corretamente
+
 class ProductCard extends React.Component {
   render() {
     const { product: { title, price, thumbnail, id } } = this.props;
