@@ -1,3 +1,5 @@
+// Requisições de API
+
 export async function getCategories() {
   fetch('https://api.mercadolibre.com/sites/MLB/categories')
     .then((res) => res.json())
