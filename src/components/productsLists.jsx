@@ -13,7 +13,7 @@ class ProductList extends Component {
     this.state = { products: '' };
   }
 
-  // não sei se coloca ".results" aqui embaixo já 
+  // não sei se coloca ".results" aqui embaixo já
   componentDidMount() {
     API.productsFromCategoryAndQuery().then((response) => this.setState({ products: response }));
   }
