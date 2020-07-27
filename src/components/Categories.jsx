@@ -6,7 +6,7 @@ class Categories extends Component {
     super(props);
     this.state = { categories: '' };
   }
-  
+
   componentDidMount() {
     API.getCategories().then((response) => this.setState({ categories: response }));
   }
