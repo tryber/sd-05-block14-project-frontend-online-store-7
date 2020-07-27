@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import productsLists from './components/productsLists.jsx';
 import searchBar from './components/searchBar.jsx';
-import leftBarCategories from './components/leftBarCategories.jsx'
+import leftBarCategories from './components/leftBarCategories.jsx';
 import shoppingCart from './pages/shoppingCart';
 // falta importar alguns componentes e páginas
 
@@ -17,7 +17,7 @@ function App() {
           </div>
           <div className="cart-button">
             <Link data-testid="shopping-cart-button" to="/shoppingCart">
-              <img className="cart-img" src="http://shorturl.at/clvE1" />
+              <img className="cart-img" src="http://shorturl.at/clvE1" alt="Open shopping cart" />
             </Link>
           </div>
           <div className="categories">
