@@ -17,7 +17,8 @@ class ProductList extends Component {
 
   componentDidMount() {
     const { searchText } = this.props;
-    API.getProductsFromCategoryAndQuery(searchText).then((response) => this.setState({ products: response }));
+    API.getProductsFromCategoryAndQuery(searchText)
+      .then((response) => this.setState({ products: response }));
   }
 
   render() {

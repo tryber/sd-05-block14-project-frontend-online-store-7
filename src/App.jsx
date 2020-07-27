@@ -10,29 +10,29 @@ import SearchBar from './components/SearchBar';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <BrowserRouter>
-          <div className="products">
-            <Switch>
-              <Route exact path="/" component={index} />
-              <Route path="/ShoppingCart" component={ShoppingCart} />
-            </Switch>
-          </div>
-          <div>
+        <div className='products'>
+          <Switch>
+            <Route exact path='/' component={index} />
+            <Route path='/ShoppingCart' component={ShoppingCart} />
+          </Switch>
+        </div>
+        <div>
           <SearchBar />
-          </div>
-          <div>
+        </div>
+        <div>
           <Categories />
-          </div>
-          <div className="cart-button">
+        </div>
+        <div className='cart-button'>
           <Link data-testid='shopping-cart-button' to='/ShoppingCart'>
-        <img
-            className='cart-img'
-            src='https://image.flaticon.com/icons/png/512/263/263142.png'
-            alt='Open shopping cart'
-            width='300px'
-          />
-        </Link>
+            <img
+              className='cart-img'
+              src='https://image.flaticon.com/icons/png/512/263/263142.png'
+              alt='Open shopping cart'
+              width='300px'
+            />
+          </Link>
         </div>
       </BrowserRouter>
     </div>
