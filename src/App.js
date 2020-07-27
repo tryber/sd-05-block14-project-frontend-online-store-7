@@ -17,7 +17,7 @@ function App() {
           </div>
           <div className="cart-button">
             <Link data-testid="shopping-cart-button" to="/shoppingCart">
-              <img className="cart-img" src={} />
+              <img className="cart-img" src="http://shorturl.at/clvE1" />
             </Link>
           </div>
           <div className="categories">
