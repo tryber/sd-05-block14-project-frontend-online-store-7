@@ -13,11 +13,24 @@ class Categories extends Component {
 
   render() {
     const { categories } = this.state;
+    const { onClick } = this.props;
     return (
-      <div data-testid="category">
+      <div>
         <h2>Categorias:</h2>
         <div>
-          {categories.map((category) => <p>{category.name}</p>)}
+          {categories.map((category) => (
+          <div key={category.id}>
+            <label data-testid="category" className="category" htmlFor={category.id}>
+            <input
+              id={category.id}
+              name="categories"
+              type="radio"
+              // onClick={() => onClick(category.id)}
+            />
+             {category.name}
+            </label>
+          </div>)
+          )}
         </div>
       </div>
     );
