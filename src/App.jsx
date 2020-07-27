@@ -10,12 +10,12 @@ import SearchBar from './components/SearchBar';
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <BrowserRouter>
-        <div className='products'>
+        <div className="products">
           <Switch>
-            <Route exact path='/' component={index} />
-            <Route path='/ShoppingCart' component={ShoppingCart} />
+            <Route exact path="/" component={index} />
+            <Route path="/ShoppingCart" component={ShoppingCart} />
           </Switch>
         </div>
         <div>
@@ -24,13 +24,13 @@ function App() {
         <div>
           <Categories />
         </div>
-        <div className='cart-button'>
-          <Link data-testid='shopping-cart-button' to='/ShoppingCart'>
+        <div className="cart-button">
+          <Link data-testid="shopping-cart-button" to="/ShoppingCart">
             <img
-              className='cart-img'
-              src='https://image.flaticon.com/icons/png/512/263/263142.png'
-              alt='Open shopping cart'
-              width='300px'
+              className="cart-img"
+              src="https://image.flaticon.com/icons/png/512/263/263142.png"
+              alt="Open shopping cart"
+              width="300px"
             />
           </Link>
         </div>
