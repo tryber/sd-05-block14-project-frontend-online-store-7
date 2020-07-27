@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import ProductCard from '../components/productCard';
+import ProductCard from './ProductCard';
 // import getmovies from '../services/movieAPI';
 import * as API from '../services/api';
 // import Loading from '../components/Loading';
