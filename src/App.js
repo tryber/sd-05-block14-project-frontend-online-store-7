@@ -1,34 +1,38 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
-import ProductsList from './components/ProductsList.jsx';
-import SearchBar from './components/SearchBar.jsx';
-import Categories from './components/Categories.jsx';
 import ShoppingCart from './pages/ShoppingCart';
+import index from './pages/index';
+import Categories from './components/Categories';
+import SearchBar from './components/SearchBar';
+
 // falta importar alguns componentes e páginas
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <div className="main-page">
-          <div className="search-bar">
-            <SearchBar />
-          </div>
-          <div className="cart-button">
-            <Link data-testid="shopping-cart-button" to="/ShoppingCart">
-              <img className="cart-img" src="http://shorturl.at/clvE1" alt="Open shopping cart" />
-            </Link>
-          </div>
-          <div className="categories">
-            <Categories />
-          </div>
           <div className="products">
             <Switch>
-              <Route exact path="/" component={ProductsList} />
+              <Route exact path="/" component={index} />
               <Route path="/ShoppingCart" component={ShoppingCart} />
             </Switch>
           </div>
+          <div>
+          <SearchBar />
+          </div>
+          <div>
+          <Categories />
+          </div>
+          <div className="cart-button">
+          <Link data-testid='shopping-cart-button' to='/ShoppingCart'>
+        <img
+            className='cart-img'
+            src='https://image.flaticon.com/icons/png/512/263/263142.png'
+            alt='Open shopping cart'
+            width='300px'
+          />
+        </Link>
         </div>
       </BrowserRouter>
     </div>
