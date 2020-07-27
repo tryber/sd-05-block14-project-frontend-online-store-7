@@ -1,12 +1,14 @@
 import React from 'react';
-import ProductsLists from './productsLists';
 
 class SearchBar extends React.Component {
   render() {
+    const { searchText, onSearchTextChange } = this.props;
     return (
-      // <input onChange={this.change}></input>
-      <ProductsLists />
+      <div>
+        <input type="text" value={searchText} onChange={onSearchTextChange} />
+      </div>
     );
   }
 }
+
 export default SearchBar;

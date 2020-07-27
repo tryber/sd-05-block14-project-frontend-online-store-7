@@ -14,8 +14,11 @@ class ProductList extends Component {
   }
 
   // não sei se coloca ".results" aqui embaixo já
+
   componentDidMount() {
-    API.productsFromCategoryAndQuery().then((response) => this.setState({ products: response }));
+    const { searchText } = this.props;
+    API.getProductsFromCategoryAndQuery(searchText)
+      .then((response) => this.setState({ products: response }));
   }
 
   render() {

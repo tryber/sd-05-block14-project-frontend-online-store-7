@@ -4,7 +4,7 @@ import * as API from '../services/api';
 class Categories extends Component {
   constructor(props) {
     super(props);
-    this.state = { categories: '' };
+    this.state = { categories: [] };
   }
 
   componentDidMount() {
