@@ -1,7 +1,11 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-// falta importar todos os componentes
+import './App.css';
+import productsLists from './components/productsLists.jsx';
+import searchBar from './components/searchBar.jsx';
+import leftBarCategories from './components/leftBarCategories.jsx'
+import shoppingCart from './pages/shoppingCart';
+// falta importar alguns componentes e páginas
 
 function App() {
   return (
@@ -12,7 +16,9 @@ function App() {
             <searchBar />
           </div>
           <div className="cart-button">
-            <Link data-testid="shopping-cart-button" to="/shoppingCart"> colocar imagem do botão aqui </Link>
+            <Link data-testid="shopping-cart-button" to="/shoppingCart">
+              <img className="cart-img" src={} />
+            </Link>
           </div>
           <div className="categories">
             <leftBarCategories />
