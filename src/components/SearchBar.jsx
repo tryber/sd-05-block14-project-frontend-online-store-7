@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductsLists from './productsLists';
+
 class SearchBar extends React.Component {
   render() {
     return (
