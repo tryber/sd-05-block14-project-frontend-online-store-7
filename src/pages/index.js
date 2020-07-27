@@ -1,9 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import Link from 'react-dom';
 import ProductList from '../components/ProductsList';
-import SearchBar from '../components/SearchBar';
-import Categories from '../components/Categories';
 
 class index extends Component {
   constructor(props) {
@@ -26,8 +23,6 @@ class index extends Component {
     if (this.state.searchText === '') {
       return (
         <div>
-          <SearchBar />
-          <Categories />
           <p data-testid='home-initial-message'>
             Digite algum termo de pesquisa ou escolha uma categoria.
           </p>
