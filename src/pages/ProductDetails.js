@@ -9,9 +9,7 @@ import { Link } from 'react-router-dom';
 class ProductDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      product: '',
-    };
+    this.state = { product: '' }
   }
 
   componentDidMount() {
@@ -24,16 +22,15 @@ class ProductDetails extends Component {
 
   render() {
     const { product } = this.state;
-    const { title, price, available_quantity, thumbnail, attributes } = product;
+    const { title, price, thumbnail, attributes } = product;
     return (
       <section>
         <img alt="Fotenha" src={thumbnail} />
         <p data-testid="product-detail-name">{`Produto: ${title}`}</p>
         <p>{`Preço: r$${price}`}</p>
-        <p>{`Estoque ${available_quantity}`}</p>
         <p>{`Descrição: ${attributes.value_name}`}</p>
         <div>
-          <Link data-testid="product-detail-add-to-cart" to={"/ShoppingCart"}>COMPRAR</Link>
+          <Link data-testid='product-detail-add-to-cart' to={"/ShoppingCart"}>COMPRAR</Link>
           <Link to="/">VOLTAR</Link>
         </div>
         <div>
