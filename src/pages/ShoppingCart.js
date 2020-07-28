@@ -1,5 +1,6 @@
 import React from 'react';
-//import ProductCard from './ProductCard'; *pode ser necessário pra lógica*
+
+// import ProductCard from './ProductCard'; *pode ser necessário pra lógica*
 
 class ShoppingCart extends React.Component {
   render() {
@@ -8,5 +9,5 @@ class ShoppingCart extends React.Component {
     );
   }
 }
-  
+
 export default ShoppingCart;
