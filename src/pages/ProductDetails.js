@@ -1,25 +1,26 @@
-// Adicione o atributo data-testid com o valor product-detail-name 
+// Adicione o atributo data-testid com o valor product-detail-name
 // no elemento que possui o nome do produto na tela de detalhes.
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
-import * as API from '../services/api';
+// import * as API from '../services/api';
 // import { Loading } from '../components';
 
-class ProductDetails extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      product: '',
-    };
-  }
+// class ProductDetails extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       product: '',
+//     };
+//   }
 
-  componentDidMount() {
-    const id = this.props.match.params.id;
-    API.getProductsFromCategoryAndQuery(categoryId, query)(id).then((response) => this.setState({ movie: response, loading: false }));
-  }
+//   componentDidMount() {
+//     const id = this.props.match.params.id;
+//     API.getProductsFromCategoryAndQuery(categoryId, query)(id)
+// .then((response) => this.setState({ movie: response, loading: false }));
+//   }
 
-  render() {
+//   render() {
     // const { movie, loading } = this.state;
 
     // if (loading) return <Loading />;
@@ -37,11 +38,11 @@ class ProductDetails extends Component {
     //       <Link to="/">VOLTAR</Link>
     //     </div>
     //   </div>
-    // );
-  }
-}
+//     // );
+//   }
+// }
 
-export default ProductDetails;
+// export default ProductDetails;
 
 // MovieDetails.propTypes = {
 //   match: PropTypes.shape({

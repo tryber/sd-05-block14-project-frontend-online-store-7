@@ -21,13 +21,13 @@ class Categories extends Component {
           {categories.map((category) => (
             <div key={category.id}>
               <label data-testid="category" className="category" htmlFor={category.id}>
-              <input
-                id={category.id}
-                name="categories"
-                type="radio"
-                // onClick={() => onClick(category.id)}
-              />
-              {category.name}
+                <input
+                  id={category.id}
+                  name="categories"
+                  type="radio"
+                  // onClick={() => onClick(category.id)}
+                />
+                {category.name}
               </label>
             </div>
           ))}
