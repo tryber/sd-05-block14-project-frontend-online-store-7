@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import ProductCard from './ProductCard'; *pode ser necessário pra lógica*
-
 class ShoppingCart extends React.Component {
   render() {
     return (
