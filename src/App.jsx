@@ -5,6 +5,7 @@ import ShoppingCart from './pages/ShoppingCart';
 import index from './pages/index';
 import Categories from './components/Categories';
 import SearchBar from './components/SearchBar';
+import ProductDetails from './pages/ProductDetails';
 
 // falta importar alguns componentes e páginas
 
@@ -15,6 +16,7 @@ function App() {
         <div className="products">
           <Switch>
             <Route exact path="/" component={index} />
+            <Route exact path="/:id" component={ProductDetails} />
             <Route path="/ShoppingCart" component={ShoppingCart} />
           </Switch>
         </div>
