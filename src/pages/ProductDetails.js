@@ -22,21 +22,21 @@ class ProductDetails extends Component {
 
   render() {
     const { product } = this.state;
-    const { title, price, thumbnail, attributes } = product;
+    const { title, price, thumbnail } = product;
     return (
       <section>
         <img alt="Fotenha" src={thumbnail} />
         <p data-testid="product-detail-name">{`Produto: ${title}`}</p>
-        <p>{`Preço: r$${price}`}</p>
-        <p>{`Descrição: ${attributes.value_name}`}</p>
+        <p>{`Preço: R$ ${price}`}</p>
         <div>
           <Link data-testid="product-detail-add-to-cart" to={'/ShoppingCart'}>COMPRAR</Link>
+        </div>
+        <div>
           <Link to="/">VOLTAR</Link>
         </div>
         <div>
           <label htmlFor="evaluation">Avalie esse produto:</label>
           <input id="evaluation" type="text" data-testid="product-detail-evaluation" />
-          <p>botão do submit?!</p>
         </div>
       </section>
     );
