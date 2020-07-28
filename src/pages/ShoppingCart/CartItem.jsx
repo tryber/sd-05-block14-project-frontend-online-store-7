@@ -12,11 +12,13 @@ class CartItem extends Component {
         <p data-testid="shopping-cart-product-quantity">
           Quantidade: {quantity}
         </p>
-        <button type="button"
+        <button
+          type="button"
           data-testid="product-decrease-quantity"
           onClick={() => decreaseQuantity(cartProduct)}
         >-</button>
-        <button type="button"
+        <button
+          type="button"
           data-testid="product-increase-quantity"
           onClick={() => increaseQuantity(cartProduct)}
         >+</button>
