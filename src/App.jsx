@@ -16,7 +16,9 @@ function App() {
         <div className="products">
           <Switch>
             <Route exact path="/" component={index} />
+            {/*  deveria fazer um botão com link para este path e não um Route, senão quebra o código
             <Route exact path="/:id" component={ProductDetails} />
+            */}
             <Route path="/ShoppingCart" component={ShoppingCart} />
           </Switch>
         </div>
@@ -32,7 +34,7 @@ function App() {
               className="cart-img"
               src="https://image.flaticon.com/icons/png/512/263/263142.png"
               alt="Open shopping cart"
-              width="300px"
+              width="50px"
             />
           </Link>
         </div>

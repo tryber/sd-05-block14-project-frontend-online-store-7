@@ -22,7 +22,7 @@ class CartItem extends Component {
           data-testid="product-increase-quantity"
           onClick={() => increaseQuantity(cartProduct)}
         >+</button>
-        <p>Preço Total: R${price * quantity}</p>
+        <p>R${price * quantity}</p>
         <button type="button" onClick={() => removeFromCart(cartProduct)}>
           Remover do carrinho
         </button>
