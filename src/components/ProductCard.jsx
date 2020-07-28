@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import movies from '../services/movieData';
 // import { getMovies } from '../services/movieAPI';
 // import PropTypes from 'prop-types';
@@ -16,7 +16,8 @@ class ProductCard extends React.Component {
         <h2>{title}</h2>
         <p>{price}</p>
         <div>
-          <p>botão c linque e nome que cc não deixa escrever</p>
+          <p>botão comprar</p>
+          <Link data-testid="product-detail-link" to={`/${this.props.id}`}>VER DETALHES</Link>
         </div>
       </div>
     );
