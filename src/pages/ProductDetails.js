@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 class ProductDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = { product: '' }
+    this.state = { product: '' };
   }
 
   componentDidMount() {
@@ -30,7 +30,7 @@ class ProductDetails extends Component {
         <p>{`Preço: r$${price}`}</p>
         <p>{`Descrição: ${attributes.value_name}`}</p>
         <div>
-          <Link data-testid='product-detail-add-to-cart' to={"/ShoppingCart"}>COMPRAR</Link>
+          <Link data-testid="product-detail-add-to-cart" to={'/ShoppingCart'}>COMPRAR</Link>
           <Link to="/">VOLTAR</Link>
         </div>
         <div>
@@ -39,7 +39,7 @@ class ProductDetails extends Component {
           <p>botão do submit?!</p>
         </div>
       </section>
-     );
+    );
   }
 }
 
