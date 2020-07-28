@@ -1,6 +1,8 @@
 import React from 'react';
 import { Component } from 'react';
 import ProductList from '../components/ProductsList';
+import Categories from '../components/Categories';
+import SearchBar from '../components/SearchBar';
 
 class index extends Component {
   constructor(props) {
@@ -18,17 +20,14 @@ class index extends Component {
 // filterProducts() {}
 
   render() {
-    if (this.state.searchText === '') {
-      return (
-        <div>
-          <p data-testid="home-initial-message">
-            Digite algum termo de pesquisa ou escolha uma categoria.
-          </p>
-        </div>
-      );
-    }
     return (
       <div>
+        <div>
+          <SearchBar />
+        </div>
+        <div>
+          <Categories />
+        </div>
         <ProductList searchText={this.state.searchText} />
       </div>
     );

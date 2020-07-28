@@ -24,6 +24,15 @@ class ProductList extends Component {
   render() {
     const { products } = this.state;
     const Results = products.results; // ou faz isso
+    if (this.state.searchText === null) {
+      return (
+        <div>
+          <p data-testid="home-initial-message">
+            Digite algum termo de pesquisa ou escolha uma categoria.
+          </p>
+        </div>
+      );
+    }
     return (
       <div data-testid="">
         {Results.map((product) => <ProductCard key={product.id} product={product} />)}
