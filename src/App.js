@@ -69,14 +69,15 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/products/:id" component={ProductDetails} />
-            <Route path="/shoppingCart" render={(props) => (
-              <ShoppingCart
-                {...props}
-                increaseQuantity={this.increaseQuantityHandler}
-                decreaseQuantity={this.decreaseQuantityHandler}
-                removeFromCart={this.removeFromCart}
-                cartItems={cartItems}
-              />)}
+            <Route path="/shoppingCart"
+              render={(props) => (
+                <ShoppingCart
+                  {...props}
+                  increaseQuantity={this.increaseQuantityHandler}
+                  decreaseQuantity={this.decreaseQuantityHandler}
+                  removeFromCart={this.removeFromCart}
+                  cartItems={cartItems}
+                />)}
             />
           </Switch>
         </BrowserRouter>
