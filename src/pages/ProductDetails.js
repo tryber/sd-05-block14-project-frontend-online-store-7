@@ -33,9 +33,8 @@ class ProductDetails extends Component {
           <button
             data-testid="product-detail-add-to-cart"
             type="button"
-            onClick={() => increaseQuantity(product)}>
-            COMPRAR
-          </button>
+            onClick={() => increaseQuantity(product)}
+          >COMPRAR</button>
         </div>
         <div>
           <Link to="/">VOLTAR</Link>
