@@ -14,6 +14,7 @@ class SearchBar extends React.Component {
   }
 
   resetInput() {
+    this.props.onSubmit(this.state.SearchText);
     this.setState({ searchText: '' });
   }
 
