@@ -4,33 +4,34 @@ import { Link } from 'react-router-dom';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchText: '' };
+    this.state = { search: '', value: '' };
     this.onClickSearch = this.onClickSearch.bind(this);
     this.resetInput = this.resetInput.bind(this);
   }
 
   onClickSearch(event) {
-    this.setState({ searchText: event.target.value, value: event.target.value});
+    this.setState({ search: event.target.value, value: event.target.value });
   }
 
   resetInput() {
-    this.setState({ searchText: '' });
+    this.setState({ value: '' });
   }
 
   render() {
-    const { searchText } = this.state;
+    const { search, value } = this.state
     return (
       <div>
         <form>
           <input
-            value={searchText}
+            type="text"
+            value={value}
             data-testid="query-input"
             onChange={this.onClickSearch}
           />
           <Link
             to={{
               pathname: '/',
-              state: { searchText },
+              state: { search },
             }}
           >
             <button

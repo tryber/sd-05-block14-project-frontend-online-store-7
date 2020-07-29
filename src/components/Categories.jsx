@@ -13,7 +13,7 @@ class Categories extends Component {
 
   render() {
     const { categories } = this.state;
-    // const { onClick } = this.props;
+    const { onClick } = this.props;
     return (
       <div>
         <h2>Categorias:</h2>
@@ -25,7 +25,7 @@ class Categories extends Component {
                   id={category.id}
                   name="categories"
                   type="radio"
-                  // onClick={() => onClick(category.id)}
+                  onClick={() => onClick(category.id)}
                 />
                 {category.name}
               </label>
