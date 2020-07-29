@@ -5,7 +5,7 @@ import ProductDetails from './pages/ProductDetails';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import Home from './pages/index';
 
-class App extends Component() {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = { cartItems: [] };
@@ -20,14 +20,14 @@ class App extends Component() {
         (product) => product.id === newCartItem.id
       )
         ? state.cartItems.map((product) => {
-            if (product.id === newCartItem.id) {
-              return {
-                ...product,
-                quantity: product.quantity + 1,
-              };
-            }
-            return product;
-          })
+          if (product.id === newCartItem.id) {
+            return {
+              ...product,
+              quantity: product.quantity + 1,
+            };
+          }
+          return product;
+        })
         : [...state.cartItems, { ...newCartItem, quantity: 1 }],
     }));
   }
@@ -38,14 +38,14 @@ class App extends Component() {
         (product) => product.id === subCartItem.id
       )
         ? state.cartItems.map((product) => {
-            if (product.id === subCartItem.id) {
-              return {
-                ...product,
-                quantity: product.quantity + 1,
-              };
-            }
-            return product;
-          })
+          if (product.id === subCartItem.id) {
+            return {
+              ...product,
+              quantity: product.quantity + 1,
+            };
+          }
+          return product;
+        })
         : [...state.cartItems, { ...subCartItem, quantity: 1 }],
     }));
   }
@@ -99,6 +99,10 @@ class App extends Component() {
             {this.routeCreator(ShoppingCart, '/shoppingCart')}
             {this.routeCreator(Home)}
           </Switch>
+        </BrowserRouter>
+      </div>
+    )
+  }
 }
 
-export default App;
+  export default App;
