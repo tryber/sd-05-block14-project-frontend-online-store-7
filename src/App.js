@@ -70,7 +70,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/products/:id" component={ProductDetails} />
             <Route
-            path="/shoppingCart"
+              path="/shoppingCart"
               render={(props) => (
                 <ShoppingCart
                   {...props}

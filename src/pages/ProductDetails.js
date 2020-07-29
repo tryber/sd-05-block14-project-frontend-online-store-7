@@ -30,7 +30,10 @@ class ProductDetails extends Component {
         <p data-testid="product-detail-name">{`Produto: ${title}`}</p>
         <p>{`Preço: R$ ${price}`}</p>
         <div>
-        <button data-testid="product-detail-add-to-cart" type="button" onClick={() => increaseQuantity(product)}>COMPRAR</button>
+          <button data-testid="product-detail-add-to-cart"
+            type="button"
+            onClick={() => increaseQuantity(product)}>
+            COMPRAR</button>
         </div>
         <div>
           <Link to="/">VOLTAR</Link>
