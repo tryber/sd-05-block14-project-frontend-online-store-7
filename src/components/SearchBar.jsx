@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
   }
 
   onClickSearch(event) {
-    this.setState({ searchText: event.target.value });
+    this.setState({ searchText: event.target.value, value: event.target.value});
   }
 
   resetInput() {

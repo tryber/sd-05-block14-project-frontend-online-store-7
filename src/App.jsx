@@ -19,19 +19,6 @@ function App() {
             <Route path="/ShoppingCart" component={ShoppingCart} />
           </Switch>
         </div>
-        <div>
-          <Categories />
-        </div>
-        <div className="cart-button">
-          <Link data-testid="shopping-cart-button" to="/ShoppingCart">
-            <img
-              className="cart-img"
-              src="https://image.flaticon.com/icons/png/512/263/263142.png"
-              alt="Open shopping cart"
-              width="300px"
-            />
-          </Link>
-        </div>
       </BrowserRouter>
     </div>
   );

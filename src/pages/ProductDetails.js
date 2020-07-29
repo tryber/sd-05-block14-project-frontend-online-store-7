@@ -29,7 +29,7 @@ class ProductDetails extends Component {
         <p data-testid="product-detail-name">{`Produto: ${title}`}</p>
         <p>{`Preço: R$ ${price}`}</p>
         <div>
-          <Link data-testid="product-detail-add-to-cart" to={'/ShoppingCart'}>COMPRAR</Link>
+          <Link data-testid="product-detail-add-to-cart" to={'/ShoppingCart/ShoppingCart'}>COMPRAR</Link>
         </div>
         <div>
           <Link to="/">VOLTAR</Link>
