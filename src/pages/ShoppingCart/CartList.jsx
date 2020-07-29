@@ -3,7 +3,13 @@ import CartItem from './CartItem';
 
 class CartList extends Component {
   render() {
-    const { increaseQuantity, decreaseQuantity, removeFromCart, cartItems, updateTotal, cartProduct } = this.props;
+    const {
+      increaseQuantity,
+      decreaseQuantity,
+      removeFromCart,
+      cartItems,
+      updateTotal,
+    } = this.props;
 
     if (cartItems.length < 1) {
       return (
@@ -19,7 +25,7 @@ class CartList extends Component {
       <div>
         {cartItems.map((cartItem) => (
           <CartItem
-            cartProduct={cartProduct}
+            cartProduct={cartItem}
             increaseQuantity={increaseQuantity}
             decreaseQuantity={decreaseQuantity}
             removeFromCart={removeFromCart}
