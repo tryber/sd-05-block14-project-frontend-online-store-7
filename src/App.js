@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import ProductDetails from './pages/ProductDetails';
-import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import Home from './pages/index';
+import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 
 class App extends Component {
   constructor(props) {
@@ -61,43 +61,23 @@ class App extends Component {
     });
   }
 
-  routeCreator(page, path) {
-    const PageName = page;
-    const { cartItems } = this.state;
-    return (
-      <Route
-        path={path}
-        render={(props) => (
-          <PageName
-            {...props}
-            increaseQuantity={this.increaseQuantityHandler}
-            decreaseQuantity={this.decreaseQuantityHandler}
-            removeFromCart={this.removeFromCart}
-            cartItems={cartItems}
-          />
-        )}
-      />
-    );
-  }
-
-  /* tranferir para homepage este link:
-<Link data-testid="shopping-cart-button" to="/shoppingCart">
-  <img
-    className="cart-img"
-    src="https://image.flaticon.com/icons/png/512/263/263142.png"
-    alt="Open shopping cart"
-    width="50px"
-  />
-</Link> */
-
   render() {
+    const { cartItems } = this.state;
     return (
       <div className="App">
         <BrowserRouter>
           <Switch>
-            {this.routeCreator(ProductDetails, '/product/:productID')}
-            {this.routeCreator(ShoppingCart, '/shoppingCart')}
-            {this.routeCreator(Home)}
+            <Route exact path="/" component={Home} />
+            <Route path="/products/:id" component={ProductDetails} />
+            <Route path="/shoppingCart" render={(props) => (
+              <ShoppingCart
+                {...props}
+                increaseQuantity={this.increaseQuantityHandler}
+                decreaseQuantity={this.decreaseQuantityHandler}
+                removeFromCart={this.removeFromCart}
+                cartItems={cartItems}
+              />)}
+            />
           </Switch>
         </BrowserRouter>
       </div>

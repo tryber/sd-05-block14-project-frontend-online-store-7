@@ -31,7 +31,7 @@ class index extends Component {
   async searchApi() {
     const { category, value } = this.state;
     const apiResponse = await API.getProductsFromCategoryAndQuery(category, value);
-    this.setState({ search: apiResponse });
+    this.setState({ search: apiResponse.results });
   }
 
 
@@ -40,7 +40,7 @@ class index extends Component {
     return (
       <div>
         <div>
-          <SearchBar onClick={this.searchValue} />
+          <SearchBar search={search} value={value} />
         </div>
         <div className="cart-button">
           <Link data-testid="shopping-cart-button" to="/ShoppingCart">

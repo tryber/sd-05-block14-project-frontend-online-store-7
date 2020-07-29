@@ -9,15 +9,16 @@ import { Link } from 'react-router-dom';
 class ProductCard extends React.Component {
   render() {
     const { product: { title, price, thumbnail, id } } = this.props;
+    console.log(this.props.product.id);
 
     return (
       <div data-testid="product">
-        <image src={thumbnail} alt={id} />
+        <img src={thumbnail} alt={id} />
         <h2>{title}</h2>
         <p>{price}</p>
         <div>
           <p>botão comprar</p>
-          <Link data-testid="product-detail-link" to={`/${this.props.id}`}>VER DETALHES</Link>
+          <Link data-testid="product-detail-link" to={`/products/${this.props.product.id}`}>VER DETALHES</Link>
         </div>
       </div>
     );
