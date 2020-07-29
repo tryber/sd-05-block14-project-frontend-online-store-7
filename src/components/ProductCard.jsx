@@ -18,7 +18,7 @@ class ProductCard extends React.Component {
         <p>{price}</p>
         <div>
           <button
-            data-testid="product-detail-add-to-cart"
+            data-testid="product-add-to-cart"
             type="button"
             onClick={() => increaseQuantity(product)}
           >
