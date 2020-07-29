@@ -4,20 +4,18 @@ import { Link } from 'react-router-dom';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchText: '' }
+    this.state = { searchText: '' };
     this.onClickSearch = this.onClickSearch.bind(this);
     this.resetInput = this.resetInput.bind(this);
   }
 
   onClickSearch(event) {
-    this.setState({searchText: event.target.value})
+    this.setState({ searchText: event.target.value });
   }
 
   resetInput() {
-    this.setState({ searchText: '' })
+    this.setState({ searchText: '' });
   }
-
-
 
   render() {
     const { searchText } = this.state;
@@ -50,4 +48,4 @@ class SearchBar extends React.Component {
 
 }
 
-export default SearchBar; 
+export default SearchBar;

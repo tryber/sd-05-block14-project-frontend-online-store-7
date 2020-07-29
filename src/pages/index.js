@@ -18,10 +18,10 @@ class index extends Component {
         <div>
           <SearchBar />
         </div>
-        <ProductList products={this.state.products} /> 
+        <ProductList products={this.state.products} />
       </div>
     );
   }
 }
 
-export default index; 
+export default index;
