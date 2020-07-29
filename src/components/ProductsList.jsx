@@ -7,7 +7,7 @@ import ProductCard from './ProductCard';
 class ProductList extends Component {
   render() {
     const { products } = this.props; // Incluir add to cart aqui
-    if (products.length < 1) {
+    if (products === null) {
       return (
         <p data-testid="home-initial-message">
           Digite algum termo de pesquisa ou escolha uma categoria.

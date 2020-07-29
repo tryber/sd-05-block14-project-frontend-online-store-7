@@ -23,13 +23,18 @@ class ProductDetails extends Component {
   render() {
     const { product } = this.state;
     const { title, price, thumbnail } = product;
+    const { increaseQuantity } = this.props;
     return (
       <section>
         <img alt="Fotenha" src={thumbnail} />
         <p data-testid="product-detail-name">{`Produto: ${title}`}</p>
         <p>{`Preço: R$ ${price}`}</p>
         <div>
-          <Link data-testid="product-detail-add-to-cart" to={'/ShoppingCart'}>COMPRAR</Link>
+          <button
+            data-testid="product-detail-add-to-cart"
+            type="button"
+            onClick={() => increaseQuantity(product)}
+          >COMPRAR</button>
         </div>
         <div>
           <Link to="/">VOLTAR</Link>

@@ -8,16 +8,28 @@ import { Link } from 'react-router-dom';
 
 class ProductCard extends React.Component {
   render() {
-    const { product: { title, price, thumbnail, id } } = this.props;
+    const { product, increaseQuantity } = this.props;
+    const { title, price, thumbnail, id } = product;
 
     return (
       <div data-testid="product">
-        <image src={thumbnail} alt={id} />
+        <img src={thumbnail} alt={id} />
         <h2>{title}</h2>
         <p>{price}</p>
         <div>
-          <p>botão comprar</p>
-          <Link data-testid="product-detail-link" to={`/${this.props.id}`}>VER DETALHES</Link>
+          <button
+            data-testid="product-add-to-cart"
+            type="button"
+            onClick={() => increaseQuantity(product)}
+          >
+            COMPRAR
+          </button>
+          <Link
+            data-testid="product-detail-link"
+            to={`/products/${this.props.product.id}`}
+          >
+            VER DETALHES
+          </Link>
         </div>
       </div>
     );
