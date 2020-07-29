@@ -17,7 +17,7 @@ class App extends Component {
   increaseQuantityHandler(newCartItem) {
     this.setState((state) => ({
       cartItems: state.cartItems.some(
-        (product) => product.id === newCartItem.id
+        (product) => product.id === newCartItem.id,
       )
         ? state.cartItems.map((product) => {
           if (product.id === newCartItem.id) {
@@ -35,7 +35,7 @@ class App extends Component {
   decreaseQuantityHandler(subCartItem) {
     this.setState((state) => ({
       cartItems: state.cartItems.some(
-        (product) => product.id === subCartItem.id
+        (product) => product.id === subCartItem.id,
       )
         ? state.cartItems.map((product) => {
           if (product.id === subCartItem.id) {
@@ -54,7 +54,7 @@ class App extends Component {
     this.setState((state) => {
       const newCartItems = [...state.cartItems];
       const index = newCartItems.findIndex(
-        (product) => product.id === rmvCartItem.id
+        (product) => product.id === rmvCartItem.id,
       );
       newCartItems.splice(index, 1);
       return { cartItems: newCartItems };
@@ -101,8 +101,8 @@ class App extends Component {
           </Switch>
         </BrowserRouter>
       </div>
-    )
+    );
   }
 }
 
-  export default App;
+export default App;
