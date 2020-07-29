@@ -80,7 +80,7 @@ class App extends Component() {
     );
   }
 
-/* tranferir para homepage este link:
+  /* tranferir para homepage este link:
 <Link data-testid="shopping-cart-button" to="/shoppingCart">
   <img
     className="cart-img"
@@ -106,4 +106,3 @@ class App extends Component() {
 }
 
 export default App;
-
