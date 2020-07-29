@@ -20,19 +20,19 @@ class SearchBar extends React.Component {
 
 
   render() {
-    const { inputValue } = this.state;
+    const { searchText } = this.state;
     return (
       <div>
         <form>
           <input
-            value={inputValue}
+            value={searchText}
             data-testid="query-input"
             onChange={this.onClickSearch}
           />
           <Link
             to={{
               pathname: '/',
-              state: { inputValue },
+              state: { searchText },
             }}
           >
             <button
@@ -50,4 +50,4 @@ class SearchBar extends React.Component {
 
 }
 
-export default SearchBar;
+export default SearchBar; 
