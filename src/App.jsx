@@ -99,10 +99,6 @@ class App extends Component() {
             {this.routeCreator(ShoppingCart, '/shoppingCart')}
             {this.routeCreator(Home)}
           </Switch>
-        </BrowserRouter>
-      </div>
-    );
-  }
 }
 
 export default App;
