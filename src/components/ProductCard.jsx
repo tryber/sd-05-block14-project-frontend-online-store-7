@@ -1,10 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import movies from '../services/movieData';
-// import { getMovies } from '../services/movieAPI';
-// import PropTypes from 'prop-types';
-
-// AVISO: ainda falta o botão e não sei se estamos puxando as props corretamente
 
 class ProductCard extends React.Component {
   render() {
@@ -37,12 +32,3 @@ class ProductCard extends React.Component {
 }
 
 export default ProductCard;
-
-// ProductCard.propTypes = {
-//  movie: PropTypes.shape({
-//    imagePath: PropTypes.string,
-//    title: PropTypes.string.isRequired,
-//    storyline: PropTypes.string.isRequired,
-//    id: PropTypes.number.isRequired,
-//  }).isRequired,
-// };

@@ -1,10 +1,6 @@
-// Adicione o atributo data-testid com o valor product-detail-name
-// no elemento que possui o nome do produto na tela de detalhes.
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 // import * as API from '../services/api';
-// import { Loading } from '../components';
 
 class ProductDetails extends Component {
   constructor(props) {
@@ -49,9 +45,3 @@ class ProductDetails extends Component {
 }
 
 export default ProductDetails;
-
-// MovieDetails.propTypes = {
-//   match: PropTypes.shape({
-//     params: PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired,
-//   }).isRequired,
-// };
