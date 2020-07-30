@@ -52,7 +52,7 @@ class Home extends Component {
   }
 
   render() {
-    const { decreaseQuantity } = this.props;
+    const { addToCart } = this.props;
     const { products } = this.state;
     return (
       <div className="main-container">
