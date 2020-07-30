@@ -1,53 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 
-class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '' };
-    this.onClickSearch = this.onClickSearch.bind(this);
-    this.resetInput = this.resetInput.bind(this);
-  }
-
-  onClickSearch(event) {
-    this.setState({ value: event.target.value });
-    console.log(this.state.value);
-  }
-
-  resetInput() {
-    this.setState({ value: '' });
-  }
-
+class SearchBar extends Component {
   render() {
-    const { search, value } = this.state;
+    const { inputValue, searchValueHandler, getProductsFromInput } = this.props;
+
     return (
       <div>
-        <form>
-          <input
-            type="text"
-            value={value}
-            data-testid="query-input"
-            onChange={this.onClickSearch}
-          />
-          <Link
-            to={{
-              pathname: '/',
-              state: { search },
-            }}
-          >
-            <button
-              onClick={this.resetInput}
-              type="submit"
-              data-testid="query-button"
-            >
-              Pesquisar
-            </button>
-          </Link>
-        </form>
+        <input
+          data-testid="query-input"
+          type="text"
+          value={inputValue}
+          onChange={searchValueHandler}
+        />
+        <button
+            data-testid="query-button"
+            type="button"
+            onClick={getProductsFromInput}
+        >
+          Pesquisar
+        </button>
       </div>
     );
   }
-
 }
 
 export default SearchBar;
