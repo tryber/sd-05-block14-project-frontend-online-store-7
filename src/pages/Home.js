@@ -1,45 +1,62 @@
 import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ProductList from '../components/ProductsList';
-import SearchBar from '../components/SearchBar';
 import Categories from '../components/Categories';
+import SearchBar from '../components/SearchBar';
+import ProductList from '../components/ProductsList';
 import * as API from '../services/api';
-// import ShoppingCart from './ShoppingCart/ShoppingCart';
 
-class index extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { search: null, category: null, value: null }; // , cart: []
-    this.searchCategory = this.searchCategory.bind(this);
-    this.searchValue = this.searchValue.bind(this);
-    // this.resetCategory = this.resetCategory.bind(this);
-    this.searchApi = this.searchApi.bind(this);
-    // this.addCart = this.addCart.bind(this);
+
+    this.state = {
+      inputValue: '',
+      category: '',
+      products: []
+    };
+
+    this.getProductsFromInput = this.getProductsFromInput.bind(this);
+    this.searchValueHandler = this.searchValueHandler.bind(this);
+    this.byCategoryHandler = this.byCategoryHandler.bind(this);
   }
 
-  async searchValue(sValue) {
-    await this.setState({ value: sValue });
-    this.searchApi();
+  componentDidMount() {
+    if (this.props.location.state) {
+      this.getProductsFromAPI();
+    }
   }
 
-  async searchCategory(selectedcategory) {
-    await this.setState({ category: selectedcategory });
-    this.searchApi();
+  async getProductsFromInput() {
+    const { inputValue } = this.state;
+    const products = await API.getProductsFromCategoryAndQuery(inputValue);
+    // console.log(products);
+    this.setState({ products: products.results });
   }
 
-  async searchApi() {
-    const { category, value } = this.state;
-    const apiResponse = await API.getProductsFromCategoryAndQuery(category, value);
-    this.setState({ search: apiResponse.results });
+  getProductsFromAPI() {
+    const { category } = this.state;
+    const { location: { state: { inputValue } } } = this.props;
+    API.getProductsFromCategoryAndQuery(inputValue, category)
+      .then((categoryProducts) => {
+        this.setState({ products: categoryProducts.results });
+      });
   }
 
+  byCategoryHandler(event) {
+    this.setState({ category: event.target.value });
+  }
+
+  searchValueHandler(event) {
+    this.setState({ inputValue: event.target.value });
+  }
 
   render() {
-    const { search, value } = this.state; // cart
+    const { decreaseQuantity } = this.props;
+    const { products } = this.state;
     return (
-      <div>
-        <div>
+      <div className="main-container">
+        <div className="search-bar">
           <SearchBar search={search} value={value} />
         </div>
         <div className="cart-button">
@@ -52,10 +69,10 @@ class index extends Component {
             />
           </Link>
         </div>
-        <div>
+        <div className="categories">
           <Categories onClick={this.searchCategory} value={value} />
         </div>
-        <div>
+        <div className="products-list">
           <ProductList products={search} value={search} />
         </div>
       </div>
@@ -63,4 +80,4 @@ class index extends Component {
   }
 }
 
-export default index;
+export default Home;
