@@ -10,8 +10,8 @@ class App extends Component {
     super(props);
     this.state = { cartItems: [] };
     this.increaseQuantityHandler = this.increaseQuantityHandler.bind(this);
-    this.decreaseQuantityHandler = this.increaseQuantityHandler.bind(this);
-    this.removeFromCartHandler = this.increaseQuantityHandler.bind(this);
+    this.decreaseQuantityHandler = this.decreaseQuantityHandler.bind(this);
+    this.removeFromCart = this.removeFromCart.bind(this);
   }
 
   increaseQuantityHandler(newCartItem) {

@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 class CartItem extends Component {
   render() {
     const { addToCart, decreaseQuantity, removeFromCart, cartProduct } = this.props;
-    const { name, price, thumb, quantity } = cartProduct;
+    const { title, price, thumbnail, quantity } = cartProduct;
 
     return (
       <div>
-        <img src={thumb} alt={name} />
-        <p data-testid="shopping-cart-product-name">{name}</p>
+        <img src={thumbnail} alt={title} />
+        <p data-testid="shopping-cart-product-name">{title}</p>
         <p data-testid="shopping-cart-product-quantity">
           Quantidade: {quantity}
         </p>
