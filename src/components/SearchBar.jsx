@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
   }
 
   onClickSearch(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ search: event.target.value, value: event.target.value });
     console.log(this.state.value);
   }
 
@@ -19,6 +19,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    const { onClick } = this.props;
     const { search, value } = this.state;
     return (
       <div>
@@ -29,14 +30,12 @@ class SearchBar extends React.Component {
             data-testid="query-input"
             onChange={this.onClickSearch}
           />
-          <Link
-            to={{
-              pathname: '/',
-              state: { search },
-            }}
-          >
+          <Link to={{ pathname: '/', state: { search } }} >
             <button
-              onClick={this.resetInput}
+              onClick={() => {
+                onClick(search);
+                this.resetInput();
+              }}
               type="submit"
               data-testid="query-button"
             >

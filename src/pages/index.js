@@ -40,7 +40,7 @@ class index extends Component {
     return (
       <div>
         <div>
-          <SearchBar search={search} value={value} />
+          <SearchBar search={search} value={value} onClick={this.searchValue} />
         </div>
         <div className="cart-button">
           <Link data-testid="shopping-cart-button" to="/ShoppingCart">
