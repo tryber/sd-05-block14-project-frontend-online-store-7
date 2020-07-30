@@ -35,7 +35,8 @@ class Home extends Component {
 
 
   render() {
-    const { search, value } = this.state; // cart
+    const { search, value } = this.state;
+    const { addToCart } = this.props;
     return (
       <div>
         <div>
@@ -55,7 +56,7 @@ class Home extends Component {
           <Categories onClick={this.searchCategory} value={value} />
         </div>
         <div>
-          <ProductList products={search} value={search} />
+          <ProductList products={search} value={search} addToCart={addToCart} />
         </div>
       </div>
     );

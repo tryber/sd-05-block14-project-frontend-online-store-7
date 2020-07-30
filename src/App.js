@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
-import ShoppingCart from './pages/ShoppingCart';
 import ProductDetails from './pages/ProductDetails';
+import ShoppingCart from './pages/ShoppingCart';
 
 class App extends Component {
   constructor(props) {
@@ -67,14 +67,34 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/products/:id" component={ProductDetails} />
+            <Route
+              exact path="/"
+              render={(props) => (
+                <Home
+                  {...props}
+                  addToCart={this.increaseQuantityHandler}
+                  decreaseQuantity={this.decreaseQuantityHandler}
+                  removeFromCart={this.removeFromCart}
+                  cartItems={cartItems}
+                />)}
+            />
+            <Route
+              path="/products/:id"
+              render={(props) => (
+                <ProductDetails
+                  {...props}
+                  addToCart={this.increaseQuantityHandler}
+                  decreaseQuantity={this.decreaseQuantityHandler}
+                  removeFromCart={this.removeFromCart}
+                  cartItems={cartItems}
+                />)}
+            />
             <Route
               path="/shoppingCart"
               render={(props) => (
                 <ShoppingCart
                   {...props}
-                  increaseQuantity={this.increaseQuantityHandler}
+                  addToCart={this.increaseQuantityHandler}
                   decreaseQuantity={this.decreaseQuantityHandler}
                   removeFromCart={this.removeFromCart}
                   cartItems={cartItems}

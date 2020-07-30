@@ -15,7 +15,7 @@ class CartList extends Component {
       return (
         <div>
           <p data-testid="shopping-cart-empty-message">
-            Seu carrinho está vazio
+            Seu carrinho está vazio.
           </p>
         </div>
       );
@@ -23,9 +23,9 @@ class CartList extends Component {
 
     return (
       <div>
-        {cartItems.map((cartItem) => (
+        {cartItems.map((cartProduct) => (
           <CartItem
-            cartProduct={cartItem}
+            cartProduct={cartProduct}
             addToCart={addToCart}
             decreaseQuantity={decreaseQuantity}
             removeFromCart={removeFromCart}
