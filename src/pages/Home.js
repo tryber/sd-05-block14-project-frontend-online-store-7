@@ -18,7 +18,7 @@ class Home extends Component {
 
     this.getProductsFromInput = this.getProductsFromInput.bind(this);
     this.searchValueHandler = this.searchValueHandler.bind(this);
-    this.byCategoryHandler = this.byCategoryHandler.bind(this);
+    this.searchByCategory = this.searchByCategory.bind(this);
   }
 
   componentDidMount() {
@@ -56,8 +56,15 @@ class Home extends Component {
       });
   }
 
-  byCategoryHandler(event) {
-    this.setState({ category: event.target.value });
+  async getProductByCategory() {
+    const { category, value } = this.state;
+    const apiResponse = await API.getProductsFromCategoryAndQuery(category, value);
+    this.setState({ search: apiResponse.results });
+  }
+
+  async searchByCategory(selectedCategory) {
+    await this.setState({ category: selectedCategory });
+    this.getProductByCategory();
   }
 
   searchValueHandler(event) {
@@ -87,7 +94,7 @@ class Home extends Component {
           </Link>
         </div>
         <div className="categories">
-          <Categories byCategoryHandler={this.byCategoryHandler} />
+          <Categories onClick={this.searchByCategory} />
         </div>
         <div className="products-list">
           <ProductList products={products} addToCart={addToCart} />
