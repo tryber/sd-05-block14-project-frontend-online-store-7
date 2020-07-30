@@ -5,7 +5,6 @@ import ProductList from '../components/ProductsList';
 import SearchBar from '../components/SearchBar';
 import Categories from '../components/Categories';
 import * as API from '../services/api';
-// import ShoppingCart from './ShoppingCart/ShoppingCart';
 
 class index extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class index extends Component {
     this.searchValue = this.searchValue.bind(this);
     // this.resetCategory = this.resetCategory.bind(this);
     this.searchApi = this.searchApi.bind(this);
-    // this.addCart = this.addCart.bind(this);
+    // this.addToCart = this.addToCart.bind(this);
   }
 
   async searchValue(sValue) {

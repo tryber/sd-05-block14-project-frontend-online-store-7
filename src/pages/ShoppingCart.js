@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CartList from './CartList';
+import CartList from '../components/CartList';
 
 class ShoppingCart extends React.Component {
   constructor(props) {
