@@ -16,54 +16,30 @@ class Home extends Component {
       products: []
     };
 
-    /*  this.getProductsFromInput = this.getProductsFromInput.bind(this);
-        this.getProductsFromAPI = this.getProductsFromAPI.bind(this);
-        this.searchByCategory = this.searchByCategory.bind(this); */
-    this.getProducts = this.getProducts.bind(this);
-    this.changeCategory = this.changeCategory.bind(this);
+    this.getProductsFromInput = this.getProductsFromInput.bind(this);
+    this.getProductsFromAPI = this.getProductsFromAPI.bind(this);
+    this.searchByCategory = this.searchByCategory.bind(this);
     this.searchValueHandler = this.searchValueHandler.bind(this);
   }
 
-  /*
-    async getProductsFromInput() {
-      const { inputValue } = this.state;
-      const products = await API.getProductsFromCategoryAndQuery(inputValue);
-      // console.log(products);
-      this.setState({ products: products.results });
-    }
-  
-    getProductsFromAPI() {
-      const { category, inputValue } = this.state;
-      API.getProductsFromCategoryAndQuery(category, inputValue)
-        .then((categoryProducts) => {
-          this.setState({ products: categoryProducts.results });
-        });
-    }
-  
-     async searchByCategory(selectedCategoryID) {
-      await this.setState({ category: selectedCategoryID });
-      this.getProductsFromAPI();
-    } 
-  */
-
-  async getProducts() {
+  async getProductsFromInput() {
     const { inputValue } = this.state;
     const products = await API.getProductsFromCategoryAndQuery(inputValue);
-    console.log(products);
+    // console.log(products);
     this.setState({ products: products.results });
   }
 
-  apiRequestFunc() {
-    const { category } = this.state;
-    const { location: { state: { inputValue } } } = this.props;
-    API.getProductsFromCategoryAndQuery(inputValue, category)
+  getProductsFromAPI() {
+    const { category, inputValue } = this.state;
+    API.getProductsFromCategoryAndQuery(category, inputValue)
       .then((categoryProducts) => {
         this.setState({ products: categoryProducts.results });
       });
   }
 
-  changeCategory(event) {
-    this.setState({ category: event.target.value });
+  async searchByCategory(selectedCategoryID) {
+    await this.setState({ category: selectedCategoryID });
+    this.getProductsFromAPI();
   }
 
   searchValueHandler(event) {
@@ -73,7 +49,7 @@ class Home extends Component {
   render() {
     const { inputValue, addToCart, searchValueHandler, getProductsFromInput } = this.props;
     const { products } = this.state;
-
+    
     return (
       <div className="main-container">
         <div className="search-bar">

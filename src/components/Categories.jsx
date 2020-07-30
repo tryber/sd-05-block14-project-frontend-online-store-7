@@ -11,13 +11,9 @@ class Categories extends Component {
     API.getCategories().then((response) => this.setState({ categories: response }));
   }
 
-  changeCategory(event) {
-    this.setState({ category: event.target.value });
-  }
-
   render() {
     const { categories } = this.state;
-    const { changeCategory } = this.props;
+    const { onClick } = this.props;
 
     return (
       <div className="categories-container">
@@ -30,8 +26,7 @@ class Categories extends Component {
                   id={category.id}
                   name="categories"
                   type="radio"
-                  value={category.id}
-                  onClick={(event) => changeCategory(event)}
+                  onClick={() => onClick(category.id)}
                 />
                 {category.name}
               </label>
