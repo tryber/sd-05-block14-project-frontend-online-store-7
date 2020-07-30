@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import ProductDetails from './pages/ProductDetails';
-import Home from './pages/index';
-import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
+import Home from './pages/Home';
+import ShoppingCart from './pages/ShoppingCart';
 
 class App extends Component {
   constructor(props) {

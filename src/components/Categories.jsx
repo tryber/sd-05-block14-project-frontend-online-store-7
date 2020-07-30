@@ -27,7 +27,7 @@ class Categories extends Component {
                   name="categories"
                   type="radio"
                   value={category.id}
-                  onClick={() => byCategoryHandler(event)}
+                  onClick={() => byCategoryHandler(category.id)}
                 />
                 {category.name}
               </label>
