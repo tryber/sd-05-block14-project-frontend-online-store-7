@@ -4,7 +4,7 @@ import CartItem from './CartItem';
 class CartList extends Component {
   render() {
     const {
-      increaseQuantity,
+      addToCart,
       decreaseQuantity,
       removeFromCart,
       cartItems,
@@ -26,7 +26,7 @@ class CartList extends Component {
         {cartItems.map((cartItem) => (
           <CartItem
             cartProduct={cartItem}
-            increaseQuantity={increaseQuantity}
+            addToCart={addToCart}
             decreaseQuantity={decreaseQuantity}
             removeFromCart={removeFromCart}
             updateTotal={updateTotal}
