@@ -30,12 +30,7 @@ class SearchBar extends React.Component {
             data-testid="query-input"
             onChange={this.onClickSearch}
           />
-          <Link
-            to={{
-              pathname: '/',
-              state: { search },
-            }}
-          >
+          <Link to={{ pathname: '/', state: { search } }} >
             <button
               onClick={() => {
                 onClick(search);
