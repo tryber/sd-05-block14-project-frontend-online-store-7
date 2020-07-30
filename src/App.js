@@ -41,7 +41,7 @@ class App extends Component {
           if (product.id === subCartItem.id) {
             return {
               ...product,
-              quantity: product.quantity + 1,
+              quantity: product.quantity - 1,
             };
           }
           return product;
@@ -75,9 +75,9 @@ class App extends Component {
             removeFromCart={this.removeFromCart}
             cartItems={cartItems}
           />
-        )} 
+        )}
       />
-    )
+    );
   }
 
   render() {
@@ -85,9 +85,9 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-           {this.routeCreator(ProductDetails, '/product/:id')}
-           {this.routeCreator(ShoppingCart, '/shoppingCart')}
-           {this.routeCreator(Home)}
+            {this.routeCreator(ProductDetails, '/product/:id')}
+            {this.routeCreator(ShoppingCart, '/shoppingCart')}
+            {this.routeCreator(Home)}
           </Switch>
         </BrowserRouter>
       </div>
@@ -95,4 +95,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default App;
