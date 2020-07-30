@@ -61,45 +61,33 @@ class App extends Component {
     });
   }
 
-  render() {
+  routeCreator(component, path) {
+    const ComponentName = component;
     const { cartItems } = this.state;
+    return (
+      <Route
+        path={path}
+        render={(props) => (
+          <ComponentName
+            {...props}
+            addToCart={this.increaseQuantityHandler}
+            decreaseQuantity={this.decreaseQuantityHandler}
+            removeFromCart={this.removeFromCart}
+            cartItems={cartItems}
+          />
+        )} 
+      />
+    )
+  }
+
+  render() {
     return (
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route
-              exact path="/"
-              render={(props) => (
-                <Home
-                  {...props}
-                  addToCart={this.increaseQuantityHandler}
-                  decreaseQuantity={this.decreaseQuantityHandler}
-                  removeFromCart={this.removeFromCart}
-                  cartItems={cartItems}
-                />)}
-            />
-            <Route
-              path="/products/:id"
-              render={(props) => (
-                <ProductDetails
-                  {...props}
-                  addToCart={this.increaseQuantityHandler}
-                  decreaseQuantity={this.decreaseQuantityHandler}
-                  removeFromCart={this.removeFromCart}
-                  cartItems={cartItems}
-                />)}
-            />
-            <Route
-              path="/shoppingCart"
-              render={(props) => (
-                <ShoppingCart
-                  {...props}
-                  addToCart={this.increaseQuantityHandler}
-                  decreaseQuantity={this.decreaseQuantityHandler}
-                  removeFromCart={this.removeFromCart}
-                  cartItems={cartItems}
-                />)}
-            />
+           {this.routeCreator(ProductDetails, '/product/:id')}
+           {this.routeCreator(ShoppingCart, '/shoppingCart')}
+           {this.routeCreator(Home)}
           </Switch>
         </BrowserRouter>
       </div>
@@ -107,4 +95,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
