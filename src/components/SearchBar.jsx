@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
   }
 
   onClickSearch(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ search: event.target.value, value: event.target.value });
     console.log(this.state.value);
   }
 
@@ -19,6 +19,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    const { onClick } = this.props;
     const { search, value } = this.state;
     return (
       <div>
@@ -36,7 +37,11 @@ class SearchBar extends React.Component {
             }}
           >
             <button
-              onClick={this.resetInput}
+              // onClick={this.resetInput}
+              onClick={() => {
+                onClick(search);
+                this.resetInput();
+              }}
               type="submit"
               data-testid="query-button"
             >
