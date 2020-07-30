@@ -52,12 +52,16 @@ class Home extends Component {
   }
 
   render() {
-    const { addToCart } = this.props;
+    const { inputValue, addToCart, searchValueHandler, getProductsFromInput } = this.props;
     const { products } = this.state;
     return (
       <div className="main-container">
         <div className="search-bar">
-          <SearchBar search={search} value={value} />
+          <SearchBar
+            inputValue={inputValue}
+            searchValueHandler={searchValueHandler}
+            getProductsFromInput={getProductsFromInput}
+          />
         </div>
         <div className="cart-button">
           <Link data-testid="shopping-cart-button" to="/ShoppingCart">
@@ -70,10 +74,10 @@ class Home extends Component {
           </Link>
         </div>
         <div className="categories">
-          <Categories onClick={this.searchCategory} value={value} />
+          <Categories byCategoryHandler={this.byCategoryHandler} />
         </div>
         <div className="products-list">
-          <ProductList products={search} value={search} />
+          <ProductList products={products} addToCart={addToCart} />
         </div>
       </div>
     );
