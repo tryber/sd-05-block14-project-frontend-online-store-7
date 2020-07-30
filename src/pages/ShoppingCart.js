@@ -29,7 +29,7 @@ class ShoppingCart extends React.Component {
   render() {
     const { addToCart, decreaseQuantity, removeFromCart, cartItems } = this.props;
     const { totalValue } = this.state;
-    
+
     return (
       <div>
         <div className="return-icon">
