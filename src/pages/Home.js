@@ -13,7 +13,7 @@ class Home extends Component {
     this.state = {
       inputValue: '',
       category: '',
-      products: []
+      products: [],
     };
 
     this.getProductsFromInput = this.getProductsFromInput.bind(this);
@@ -49,7 +49,7 @@ class Home extends Component {
   render() {
     const { inputValue, addToCart, searchValueHandler, getProductsFromInput } = this.props;
     const { products } = this.state;
-    
+
     return (
       <div className="main-container">
         <div className="search-bar">

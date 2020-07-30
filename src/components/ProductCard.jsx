@@ -19,12 +19,12 @@ class ProductCard extends Component {
           Adicionar ao carrinho
         </button>
         <Link
-            data-testid="product-detail-link"
-            to={`/products/${this.props.product.id}`}
+          data-testid="product-detail-link"
+          to={`/products/${this.props.product.id}`}
         >
           Ver detalhes
         </Link>
-        </div>
+      </div>
     );
   }
 }

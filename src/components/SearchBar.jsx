@@ -13,9 +13,9 @@ class SearchBar extends Component {
           onChange={searchValueHandler}
         />
         <button
-            data-testid="query-button"
-            type="button"
-            onClick={getProductsFromInput}
+          data-testid="query-button"
+          type="button"
+          onClick={getProductsFromInput}
         >
           Pesquisar
         </button>
