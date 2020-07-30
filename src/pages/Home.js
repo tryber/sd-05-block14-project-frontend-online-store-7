@@ -17,27 +17,9 @@ class Home extends Component {
     };
 
     this.getProductsFromInput = this.getProductsFromInput.bind(this);
-    this.searchValueHandler = this.searchValueHandler.bind(this);
+    this.getProductsFromAPI = this.getProductsFromAPI.bind(this);
     this.searchByCategory = this.searchByCategory.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.props.location.state) {
-      this.getProductsFromAPI();
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const { category } = this.state;
-    if (prevProps !== this.props && this.props.location.state) {
-      this.getProductsFromAPI();
-    }
-    if (prevState.category !== category) {
-      API.getProductsFromCategoryAndQuery(null, category)
-        .then((categoryProducts) => {
-          this.setState({ products: categoryProducts.results });
-        });
-    }
+    this.searchValueHandler = this.searchValueHandler.bind(this);
   }
 
   async getProductsFromInput() {
@@ -48,23 +30,16 @@ class Home extends Component {
   }
 
   getProductsFromAPI() {
-    const { category } = this.state;
-    const { location: { state: { inputValue } } } = this.props;
-    API.getProductsFromCategoryAndQuery(inputValue, category)
+    const { category, inputValue } = this.state;
+    API.getProductsFromCategoryAndQuery(category, inputValue)
       .then((categoryProducts) => {
         this.setState({ products: categoryProducts.results });
       });
   }
 
-  async getProductByCategory() {
-    const { category, value } = this.state;
-    const apiResponse = await API.getProductsFromCategoryAndQuery(category, value);
-    this.setState({ search: apiResponse.results });
-  }
-
-  async searchByCategory(selectedCategory) {
-    await this.setState({ category: selectedCategory });
-    this.getProductByCategory();
+  async searchByCategory(selectedCategoryID) {
+    await this.setState({ category: selectedCategoryID });
+    this.getProductsFromAPI();
   }
 
   searchValueHandler(event) {
