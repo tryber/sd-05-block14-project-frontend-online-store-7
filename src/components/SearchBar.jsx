@@ -37,7 +37,6 @@ class SearchBar extends React.Component {
             }}
           >
             <button
-              // onClick={this.resetInput}
               onClick={() => {
                 onClick(search);
                 this.resetInput();
