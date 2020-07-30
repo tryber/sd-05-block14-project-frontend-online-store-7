@@ -27,6 +27,19 @@ class Home extends Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { category } = this.state;
+    if (prevProps !== this.props && this.props.location.state) {
+      this.getProductsFromAPI();
+    }
+    if (prevState.category !== category) {
+      API.getProductsFromCategoryAndQuery(null, category)
+        .then((categoryProducts) => {
+          this.setState({ products: categoryProducts.results });
+        });
+    }
+  }
+
   async getProductsFromInput() {
     const { inputValue } = this.state;
     const products = await API.getProductsFromCategoryAndQuery(inputValue);

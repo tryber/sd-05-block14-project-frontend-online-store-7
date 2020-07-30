@@ -13,7 +13,7 @@ class Categories extends Component {
 
   render() {
     const { categories } = this.state;
-    const { byCategoryHandler } = this.props;
+    const { onClick } = this.props;
 
     return (
       <div className="categories-container">
@@ -26,8 +26,7 @@ class Categories extends Component {
                   id={category.id}
                   name="categories"
                   type="radio"
-                  value={category.id}
-                  onClick={() => byCategoryHandler(category.id)}
+                  onClick={() => onClick(category.id)}
                 />
                 {category.name}
               </label>
