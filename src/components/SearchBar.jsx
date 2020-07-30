@@ -1,24 +1,29 @@
-import React, { Component } from 'react';
-
 class SearchBar extends Component {
   render() {
-    const { inputValue, searchValueHandler, getProductsFromInput } = this.props;
-
+    const { onClick } = this.props;
+    const { search, value } = this.state;
     return (
       <div>
-        <input
-          data-testid="query-input"
-          type="text"
-          value={inputValue}
-          onChange={searchValueHandler}
-        />
-        <button
-          data-testid="query-button"
-          type="button"
-          onClick={getProductsFromInput}
-        >
-          Pesquisar
-        </button>
+        <form>
+          <input
+            type="text"
+            value={value}
+            data-testid="query-input"
+            onChange={this.onClickSearch}
+          />
+          <Link to={{ pathname: '/', state: { search } }} >
+            <button
+              onClick={() => {
+                onClick(search);
+                this.resetInput();
+              }}
+              type="submit"
+              data-testid="query-button"
+            >
+              Pesquisar
+            </button>
+          </Link>
+        </form>
       </div>
     );
   }

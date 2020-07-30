@@ -12,6 +12,12 @@ class ShoppingCart extends React.Component {
     this.updateTotal();
   }
 
+  componentDidUpdate(previousProps) {
+    if (previousProps !== this.props) {
+      this.updateTotal();
+    }
+  }
+
   updateTotal() {
     const { cartItems } = this.props;
     if (cartItems.length >= 1) {
@@ -21,6 +27,7 @@ class ShoppingCart extends React.Component {
   }
 
   render() {
+
     const { addToCart, decreaseQuantity, removeFromCart, cartItems } = this.props;
     const { totalValue } = this.state;
 
