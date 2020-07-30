@@ -15,8 +15,8 @@ class ProductDetails extends Component {
   }
 
   render() {
-    const { title, price, thumbnail } = product;
     const { product } = this.state;
+    const { title, price, thumbnail } = product;
     const { addToCart } = this.props;
     return (
       <div className="details-container">
